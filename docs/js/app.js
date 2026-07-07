@@ -483,17 +483,12 @@ function iniciarFiltros(){
 // ==========================================
 // MODAL
 // ==========================================
-
-
 function abrirModal(animal){
-
 
 
     const modal = document.getElementById("animalModal");
 
-
     const content = document.getElementById("modalContent");
-
 
 
     if(!modal || !content) return;
@@ -501,128 +496,158 @@ function abrirModal(animal){
 
 
 
+    const isAdotado = animal.estado === "adotado";
+
+
 
     content.innerHTML = `
 
 
-<div class="modal-gallery">
+        <div class="modal-gallery">
 
 
-    ${animal.imagens.map((imagem,index)=>`
+            ${animal.imagens.map(imagem=>`
 
-        <img 
-        src="${imagem}" 
-        alt="${animal.nome}"
-        class="modal-image"
-        data-image="${imagem}">
+                <img 
+                src="${imagem}" 
+                alt="${animal.nome}"
+                class="modal-image">
 
-    `).join("")}
-
-
-</div>
+            `).join("")}
 
 
 
-
-<div class="modal-info">
-
-
-    <div class="animal-top">
-
-        <h2>
-            ${animal.nome}
-        </h2>
-
-
-        <span class="species">
-
-            ${animal.especie === "cao" ? "Cão" : "Gato"}
-
-        </span>
-
-    </div>
-
-
-
-
-    <p class="age">
-
-        ${animal.idade} · ${animal.sexo}
-
-    </p>
-
-
-
-
-    <p>
-
-        ${animal.historia}
-
-    </p>
+        </div>
 
 
 
 
 
-    <div class="characteristics">
+        <div class="modal-info">
 
 
-        ${animal.caracteristicas.map(item=>`
-
-            <span>
-                ${item}
-            </span>
-
-        `).join("")}
+            <div class="animal-top">
 
 
-    </div>
+                <h2>
+                    ${animal.nome}
+                </h2>
 
 
+                <span class="species">
+
+                    ${animal.especie === "cao" ? "Cão" : "Gato"}
+
+                </span>
 
 
-
-    <a 
-    href="contactos.html" 
-    class="btn btn-primary modal-adopt">
-
-
-        Adotar ${animal.nome}
-
-
-    </a>
+            </div>
 
 
 
-</div>
 
-`;
+            <p class="age">
 
+                ${animal.idade} · ${animal.sexo}
+
+            </p>
+
+
+
+
+            <p>
+
+                ${animal.historia}
+
+            </p>
+
+
+
+
+            <div class="characteristics">
+
+
+                ${animal.caracteristicas.map(item=>`
+
+                    <span>
+                        ${item}
+                    </span>
+
+                `).join("")}
+
+
+            </div>
+
+
+
+
+            ${
+                !isAdotado
+
+                ?
+
+                `
+
+                <a 
+                href="contactos.html"
+                class="btn btn-primary modal-adopt">
+
+                    Adotar ${animal.nome}
+
+                </a>
+
+                `
+
+                :
+
+                `
+
+                <p class="adopted-message">
+
+                    ❤️ Este animal já encontrou uma família.
+
+                </p>
+
+                `
+
+            }
+
+
+        </div>
+
+
+    `;
 
 
     modal.classList.add("active");
 
 
 
-}
-
-document.querySelectorAll(".modal-image")
-.forEach(imagem=>{
 
 
-    imagem.addEventListener("click",()=>{
+    // ==========================================
+    // GALERIA EXPANDIDA
+    // ==========================================
 
 
-        abrirImagem(imagem.src);
+    document.querySelectorAll(".modal-image")
+    .forEach(imagem=>{
+
+
+        imagem.addEventListener("click",()=>{
+
+
+            abrirImagem(imagem.src);
+
+
+        });
 
 
     });
 
 
-});
 
-
-
+}
 
 
 function fecharModal(){
@@ -694,9 +719,7 @@ function abrirImagem(src){
 
     imagemModal.addEventListener("click",()=>{
 
-
         imagemModal.remove();
-
 
     });
 
