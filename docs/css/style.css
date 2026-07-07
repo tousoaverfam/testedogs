@@ -1,8 +1,10 @@
+```css
 /* ==========================================
    GOOGLE FONT
 ========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 
 /* ==========================================
    VARIABLES
@@ -33,21 +35,26 @@
 
 }
 
+
 /* ==========================================
    RESET
 ========================================== */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
+
 
 html{
 
     scroll-behavior:smooth;
 
 }
+
 
 body{
 
@@ -61,6 +68,7 @@ body{
 
 }
 
+
 img{
 
     width:100%;
@@ -68,6 +76,7 @@ img{
     display:block;
 
 }
+
 
 a{
 
@@ -77,6 +86,7 @@ a{
 
 }
 
+
 button{
 
     font-family:inherit;
@@ -84,6 +94,7 @@ button{
     cursor:pointer;
 
 }
+
 
 .container{
 
@@ -93,9 +104,12 @@ button{
 
 }
 
+
+
 /* ==========================================
    HEADER
 ========================================== */
+
 
 header{
 
@@ -103,7 +117,7 @@ header{
 
     top:0;
 
-    background:rgba(255,253,251,.85);
+    background:rgba(255,253,251,.88);
 
     backdrop-filter:blur(12px);
 
@@ -112,6 +126,8 @@ header{
     z-index:1000;
 
 }
+
+
 
 nav{
 
@@ -125,6 +141,8 @@ nav{
 
 }
 
+
+
 .logo{
 
     font-size:1.3rem;
@@ -134,6 +152,8 @@ nav{
     color:var(--primary-dark);
 
 }
+
+
 
 .menu{
 
@@ -145,6 +165,8 @@ nav{
 
 }
 
+
+
 .menu a{
 
     font-weight:600;
@@ -153,11 +175,16 @@ nav{
 
 }
 
-.menu a:hover{
 
-    color:var(--primary);
+
+.menu a:hover,
+.menu a.active{
+
+    color:var(--primary-dark);
 
 }
+
+
 
 .nav-button{
 
@@ -175,6 +202,8 @@ nav{
 
 }
 
+
+
 .nav-button:hover{
 
     background:var(--primary-dark);
@@ -183,15 +212,20 @@ nav{
 
 }
 
+
+
 /* ==========================================
    HERO
 ========================================== */
+
 
 .hero{
 
     padding:90px 0;
 
 }
+
+
 
 .hero-grid{
 
@@ -205,6 +239,8 @@ nav{
 
 }
 
+
+
 .hero-small{
 
     color:var(--primary-dark);
@@ -214,6 +250,8 @@ nav{
     margin-bottom:12px;
 
 }
+
+
 
 .hero h1{
 
@@ -225,6 +263,8 @@ nav{
 
 }
 
+
+
 .hero p{
 
     color:var(--text-light);
@@ -232,6 +272,8 @@ nav{
     margin-bottom:35px;
 
 }
+
+
 
 .hero-buttons{
 
@@ -242,6 +284,8 @@ nav{
     flex-wrap:wrap;
 
 }
+
+
 
 .btn{
 
@@ -255,11 +299,13 @@ nav{
 
     border-radius:999px;
 
-    transition:.25s;
+    transition:var(--transition);
 
     font-weight:700;
 
 }
+
+
 
 .btn-primary{
 
@@ -269,6 +315,8 @@ nav{
 
 }
 
+
+
 .btn-primary:hover{
 
     background:var(--primary-dark);
@@ -276,6 +324,8 @@ nav{
     transform:translateY(-3px);
 
 }
+
+
 
 .btn-secondary{
 
@@ -285,6 +335,8 @@ nav{
 
 }
 
+
+
 .btn-secondary:hover{
 
     background:var(--primary);
@@ -293,9 +345,11 @@ nav{
 
 }
 
+```css id="v2s9rj"
 /* ==========================================
-   HERO MOSAIC
+   HERO GALLERY
 ========================================== */
+
 
 .hero-gallery{
 
@@ -309,19 +363,23 @@ nav{
 
 }
 
+
+
 .hero-gallery img{
-
-    border-radius:22px;
-
-    object-fit:cover;
 
     height:100%;
 
-    transition:.4s;
+    object-fit:cover;
+
+    border-radius:var(--radius);
 
     box-shadow:var(--shadow);
 
+    transition:var(--transition);
+
 }
+
+
 
 .hero-gallery img:hover{
 
@@ -329,15 +387,21 @@ nav{
 
 }
 
+
+
+
 /* ==========================================
-   CARDS
+   GENERAL CARDS
 ========================================== */
+
 
 .cards{
 
     padding:70px 0;
 
 }
+
+
 
 .cards-grid{
 
@@ -349,19 +413,23 @@ nav{
 
 }
 
+
+
 .info-card{
 
-    background:white;
+    background:var(--card);
 
-    border-radius:22px;
+    border-radius:var(--radius);
 
     padding:35px;
 
     box-shadow:var(--shadow);
 
-    transition:.25s;
+    transition:var(--transition);
 
 }
+
+
 
 .info-card:hover{
 
@@ -369,9 +437,13 @@ nav{
 
 }
 
-.info-card i{
 
-    font-size:2rem;
+
+.info-card svg{
+
+    width:32px;
+
+    height:32px;
 
     color:var(--primary);
 
@@ -379,11 +451,15 @@ nav{
 
 }
 
+
+
 .info-card h3{
 
     margin-bottom:12px;
 
 }
+
+
 
 .info-card p{
 
@@ -391,9 +467,14 @@ nav{
 
 }
 
+
+
+
+
 /* ==========================================
-   PAGE TITLE
+   PAGE HEADER
 ========================================== */
+
 
 .page-header{
 
@@ -401,29 +482,44 @@ nav{
 
 }
 
+
+
 .page-header h1{
 
     font-size:2.8rem;
+
+    line-height:1.2;
 
     margin-bottom:15px;
 
 }
 
+
+
 .page-header p{
+
+    max-width:650px;
 
     color:var(--text-light);
 
 }
 
+
+
+
+
 /* ==========================================
-   SEARCH
+   FILTERS
 ========================================== */
+
 
 .filters{
 
     display:flex;
 
     justify-content:space-between;
+
+    align-items:center;
 
     gap:20px;
 
@@ -433,11 +529,15 @@ nav{
 
 }
 
+
+
 .search{
 
     flex:1;
 
 }
+
+
 
 .search input{
 
@@ -449,9 +549,25 @@ nav{
 
     border:1px solid var(--border);
 
+    background:white;
+
     outline:none;
 
+    font-size:1rem;
+
 }
+
+
+
+.search input:focus{
+
+    border-color:var(--primary);
+
+}
+
+
+
+
 
 .filter-buttons{
 
@@ -460,6 +576,8 @@ nav{
     gap:12px;
 
 }
+
+
 
 .filter{
 
@@ -471,9 +589,19 @@ nav{
 
     border-radius:999px;
 
-    transition:.25s;
+    transition:var(--transition);
 
 }
+
+
+
+.filter:hover{
+
+    background:#e3e3e3;
+
+}
+
+
 
 .filter.active{
 
@@ -483,9 +611,14 @@ nav{
 
 }
 
+
+
+
+
 /* ==========================================
-   ANIMAL GRID
+   ANIMAL CARDS
 ========================================== */
+
 
 .animals-grid{
 
@@ -499,21 +632,26 @@ nav{
 
 }
 
+
+
+
 .animal-card{
 
     background:white;
 
-    border-radius:22px;
+    border-radius:var(--radius);
 
     overflow:hidden;
 
     box-shadow:var(--shadow);
 
-    transition:.25s;
+    transition:var(--transition);
 
     cursor:pointer;
 
 }
+
+
 
 .animal-card:hover{
 
@@ -521,11 +659,16 @@ nav{
 
 }
 
+
+
+
 .animal-image{
 
-    height:250px;
+    height:260px;
 
 }
+
+
 
 .animal-image img{
 
@@ -535,11 +678,19 @@ nav{
 
 }
 
+
+
+
+
 .animal-content{
 
     padding:24px;
 
 }
+
+
+
+
 
 .animal-top{
 
@@ -549,9 +700,25 @@ nav{
 
     align-items:center;
 
+    gap:15px;
+
     margin-bottom:8px;
 
 }
+
+
+
+
+
+.animal-name{
+
+    font-size:1.2rem;
+
+    font-weight:800;
+
+}
+
+
 
 .species{
 
@@ -561,33 +728,64 @@ nav{
 
 }
 
+
+
 .age{
 
     color:var(--text-light);
 
-    margin-bottom:12px;
-
     font-size:.95rem;
 
+    margin-bottom:12px;
+
 }
+
+
 
 .description{
 
     color:var(--text-light);
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 
 }
+
+
+
 
 .card-button{
 
     width:100%;
 
+    border:none;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:13px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
 }
+
+
+
+.card-button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+
 
 /* ==========================================
    MODAL
 ========================================== */
+
 
 .modal{
 
@@ -609,7 +807,19 @@ nav{
 
 }
 
+
+
+.modal.active{
+
+    display:flex;
+
+}
+
+
+
 .modal-content{
+
+    position:relative;
 
     width:min(900px,100%);
 
@@ -625,23 +835,141 @@ nav{
 
 }
 
+
+
 .close{
 
     position:absolute;
 
-    right:18px;
+    right:20px;
 
-    top:18px;
+    top:15px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
 
     font-size:1.8rem;
 
-    cursor:pointer;
+    z-index:2;
 
 }
+
+
+
+
+
+.modal-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    padding:25px;
+
+}
+
+
+
+.modal-gallery img{
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+
+
+
+.modal-info{
+
+    padding:30px;
+
+}
+
+
+
+.modal-info h2{
+
+    margin-bottom:10px;
+
+}
+
+
+
+.modal-info p{
+
+    color:var(--text-light);
+
+}
+
+
+
+
+
+.characteristics{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+
+.characteristics span{
+
+    background:#EFF7F2;
+
+    color:var(--primary-dark);
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+
+}
+
+
+
+
+
+
+/* ==========================================
+   CONTACTOS
+========================================== */
+
+
+#contactos .info-card{
+
+    text-align:left;
+
+}
+
+
+
 
 /* ==========================================
    FOOTER
 ========================================== */
+
 
 footer{
 
@@ -655,6 +983,8 @@ footer{
 
 }
 
+
+
 .footer-content{
 
     display:flex;
@@ -663,84 +993,109 @@ footer{
 
     align-items:center;
 
-    flex-wrap:wrap;
-
     gap:20px;
 
+    flex-wrap:wrap;
+
 }
+
+
+
+
 
 /* ==========================================
    RESPONSIVE
 ========================================== */
 
+
 @media(max-width:980px){
 
-.hero-grid{
 
-grid-template-columns:1fr;
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .cards-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .animals-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
 
 }
 
-.cards-grid{
 
-grid-template-columns:1fr;
 
-}
-
-.animals-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
 
 @media(max-width:700px){
 
-.menu{
 
-display:none;
+    .menu{
 
-}
+        display:none;
 
-.hero h1{
+    }
 
-font-size:2.4rem;
 
-}
+    .nav-button{
 
-.hero-gallery{
+        display:none;
 
-grid-template-columns:1fr 1fr;
+    }
 
-grid-template-rows:160px 160px;
 
-}
+    .hero h1{
 
-.animals-grid{
+        font-size:2.4rem;
 
-grid-template-columns:1fr;
+    }
 
-}
 
-.page-header h1{
+    .hero-gallery{
 
-font-size:2rem;
+        grid-template-rows:160px 160px;
 
-}
+    }
 
-.filters{
 
-flex-direction:column;
+    .animals-grid{
 
-}
+        grid-template-columns:1fr;
 
-}
+    }
 
-.menu a.active{
 
-    color:var(--primary-dark);
+    .filters{
 
-    font-weight:800;
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .filter-buttons{
+
+        justify-content:center;
+
+    }
+
+
+    .page-header h1{
+
+        font-size:2rem;
+
+    }
+
 
 }
