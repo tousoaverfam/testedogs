@@ -736,3 +736,11 @@ flex-direction:column;
 }
 
 }
+
+.menu a.active{
+
+    color:var(--primary-dark);
+
+    font-weight:800;
+
+}
