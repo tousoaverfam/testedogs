@@ -1098,3 +1098,64 @@ footer{
 
 
 }
+
+.modal-image{
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.modal-image:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+
+.modal-adopt{
+
+    margin-top:30px;
+
+    display:inline-flex;
+
+}
+
+
+
+.image-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.8);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:20000;
+
+    padding:30px;
+
+}
+
+
+
+.image-modal img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+}
