@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-PT">
 
@@ -7,11 +8,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Adoção | Animais para Adoção</title>
+    <title>Para Adoção | Animais para Adoção</title>
 
     <link rel="stylesheet" href="css/style.css">
-
-    <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
 
@@ -19,7 +18,9 @@
 <body>
 
 
-<!-- HEADER -->
+<!-- HEADER GERADO PELO layout.js -->
+
+<div id="header"></div>
 
 
 
@@ -27,28 +28,23 @@
 <main>
 
 
-
 <!-- CABEÇALHO DA PÁGINA -->
 
 <section class="page-header">
 
+    <div class="container">
 
-<div class="container">
-
-
-<h1>
-Animais disponíveis para adoção
-</h1>
+        <h1>
+            Animais para Adoção
+        </h1>
 
 
-<p>
-Conheça os animais que procuram uma família e descubra
-aquele que pode ser o seu novo companheiro.
-</p>
+        <p>
+            Conheça os animais que procuram uma família
+            e descubra aquele que pode ser o seu novo companheiro.
+        </p>
 
-
-</div>
-
+    </div>
 
 </section>
 
@@ -60,74 +56,68 @@ aquele que pode ser o seu novo companheiro.
 
 <!-- FILTROS -->
 
-
 <section>
 
-
-<div class="container">
-
-
-<div class="filters">
+    <div class="container">
 
 
-
-<div class="search">
-
-<input 
-type="text"
-id="searchInput"
-placeholder="Pesquisar por nome..."
->
+        <div class="filters">
 
 
-</div>
+            <div class="search">
+
+                <input 
+                type="text"
+                id="searchInput"
+                placeholder="Pesquisar por nome..."
+                >
+
+            </div>
 
 
 
 
 
-<div class="filter-buttons">
+            <div class="filter-buttons">
 
 
-<button 
-class="filter active"
-data-filter="todos">
+                <button 
+                class="filter active"
+                data-filter="todos">
 
-Todos
+                    Todos
 
-</button>
-
-
-
-<button 
-class="filter"
-data-filter="cao">
-
-Cães
-
-</button>
+                </button>
 
 
 
-<button 
-class="filter"
-data-filter="gato">
+                <button 
+                class="filter"
+                data-filter="cao">
 
-Gatos
+                    🐶 Cães
 
-</button>
-
-
-
-</div>
+                </button>
 
 
 
-</div>
+
+                <button 
+                class="filter"
+                data-filter="gato">
+
+                    🐱 Gatos
+
+                </button>
 
 
-</div>
+            </div>
 
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -137,35 +127,33 @@ Gatos
 
 
 
-<!-- ANIMAIS -->
 
+<!-- LISTAGEM DOS ANIMAIS -->
 
 <section>
 
 
-<div class="container">
+    <div class="container">
 
 
-<div 
-class="animals-grid"
-id="animalsGrid">
+        <div 
+        class="animals-grid"
+        id="animalsGrid">
 
 
-<!-- 
-Os cartões dos animais
-são inseridos automaticamente
-pelo JavaScript
--->
+            <!--
+            Os animais são carregados
+            automaticamente através do dados.json
+            -->
 
 
-</div>
+        </div>
 
 
-</div>
+    </div>
 
 
 </section>
-
 
 
 
@@ -180,32 +168,57 @@ pelo JavaScript
 
 
 
-<!-- MODAL -->
+
+<!-- MODAL DOS ANIMAIS -->
 
 <div class="modal" id="animalModal">
 
 
-<div class="modal-content">
+    <div class="modal-content">
 
 
-<button class="close" id="closeModal">
-×
-</button>
+        <button 
+        class="close"
+        id="closeModal">
+
+            ×
+
+        </button>
 
 
 
-<div id="modalContent">
 
-<!-- Conteúdo inserido pelo JS -->
+        <div id="modalContent">
+
+            <!-- Conteúdo criado pelo app.js -->
+
+        </div>
+
+
+
+    </div>
+
 
 </div>
 
 
 
-</div>
 
 
-</div>
+
+
+
+<!-- FOOTER GERADO PELO layout.js -->
+
+<div id="footer"></div>
+
+
+
+
+
+
+
+
 
 <!-- JAVASCRIPT -->
 
@@ -214,16 +227,11 @@ pelo JavaScript
 
 <script src="js/layout.js"></script>
 
-
-<script>
-
-lucide.createIcons();
-
-</script>
-
+<script src="js/app.js"></script>
 
 
 </body>
 
 
 </html>
+```
