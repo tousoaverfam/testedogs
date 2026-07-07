@@ -1,1 +1,58 @@
-
+[
+  {
+    "id": 1,
+    "estado": "disponivel",
+    "nome": "Luna",
+    "especie": "gato",
+    "idade": "2 anos",
+    "sexo": "Fêmea",
+    "descricao": "Muito meiga e sociável.",
+    "historia": "Foi resgatada e recuperou totalmente. Agora procura uma família para sempre.",
+    "caracteristicas": [
+      "Esterilizada",
+      "Vacinada",
+      "Desparasitada"
+    ],
+    "imagens": [
+      "assets/images/placeholder.jpg",
+      "assets/images/placeholder.jpg",
+      "assets/images/placeholder.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "estado": "disponivel",
+    "nome": "Max",
+    "especie": "cao",
+    "idade": "4 anos",
+    "sexo": "Macho",
+    "descricao": "Brincalhão e muito leal.",
+    "historia": "Procura uma família ativa que goste de passeios e brincadeiras.",
+    "caracteristicas": [
+      "Vacinado",
+      "Microchipado"
+    ],
+    "imagens": [
+      "assets/images/placeholder.jpg",
+      "assets/images/placeholder.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "estado": "adotado",
+    "dataAdocao": "Fev 2025",
+    "adotadoPor": "Família Silva",
+    "nome": "Rex",
+    "especie": "cao",
+    "idade": "6 anos",
+    "sexo": "Macho",
+    "descricao": "Encontrou finalmente um lar.",
+    "historia": "Hoje vive feliz com a sua nova família.",
+    "caracteristicas": [
+      "Vacinado"
+    ],
+    "imagens": [
+      "assets/images/placeholder.jpg"
+    ]
+  }
+]
