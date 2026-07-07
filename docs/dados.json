@@ -2,57 +2,91 @@
   {
     "id": 1,
     "estado": "disponivel",
+
     "nome": "Luna",
     "especie": "gato",
+    "tipo": "Gato",
+
     "idade": "2 anos",
     "sexo": "Fêmea",
-    "descricao": "Muito meiga e sociável.",
-    "historia": "Foi resgatada e recuperou totalmente. Agora procura uma família para sempre.",
+
+    "descricao": "Uma gata muito meiga, tranquila e à procura de uma família onde possa ser feliz.",
+
+    "historia": "A Luna foi encontrada na rua e recebeu todos os cuidados necessários até recuperar totalmente. É uma gata carinhosa que adora companhia e momentos de tranquilidade.",
+
     "caracteristicas": [
       "Esterilizada",
       "Vacinada",
       "Desparasitada"
     ],
+
     "imagens": [
       "assets/images/placeholder.jpg",
       "assets/images/placeholder.jpg",
       "assets/images/placeholder.jpg"
     ]
   },
+
+
   {
     "id": 2,
     "estado": "disponivel",
+
     "nome": "Max",
     "especie": "cao",
+    "tipo": "Cão",
+
     "idade": "4 anos",
     "sexo": "Macho",
-    "descricao": "Brincalhão e muito leal.",
-    "historia": "Procura uma família ativa que goste de passeios e brincadeiras.",
+
+    "descricao": "Um cão cheio de energia, muito leal e pronto para fazer parte de uma família.",
+
+    "historia": "O Max foi resgatado da rua e mostrou desde cedo ser um animal muito sociável. Procura uma família responsável que lhe dê o carinho que merece.",
+
     "caracteristicas": [
       "Vacinado",
-      "Microchipado"
+      "Microchipado",
+      "Sociável"
     ],
+
     "imagens": [
       "assets/images/placeholder.jpg",
       "assets/images/placeholder.jpg"
     ]
   },
+
+
   {
     "id": 3,
     "estado": "adotado",
-    "dataAdocao": "Fev 2025",
-    "adotadoPor": "Família Silva",
+
     "nome": "Rex",
     "especie": "cao",
+    "tipo": "Cão",
+
     "idade": "6 anos",
     "sexo": "Macho",
-    "descricao": "Encontrou finalmente um lar.",
-    "historia": "Hoje vive feliz com a sua nova família.",
+
+    "descricao": "O Rex encontrou finalmente uma família onde pode viver feliz.",
+
+    "historia": "Depois de uma fase difícil, o Rex encontrou uma nova casa. Hoje vive rodeado de carinho e atenção.",
+
     "caracteristicas": [
-      "Vacinado"
+      "Vacinado",
+      "Esterilizado"
     ],
+
+
+    "adocao": {
+      "data": "Fev 2025",
+      "familia": "Família Silva"
+    },
+
+
     "imagens": [
+      "assets/images/placeholder.jpg",
       "assets/images/placeholder.jpg"
     ]
   }
+
 ]
