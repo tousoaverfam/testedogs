@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adoção | Animais para Adoção</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+
+<a href="index.html" class="logo">
+    Animais para Adoção
+</a>
+
+
+
+<ul class="menu">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="adocao.html">
+Adoção
+</a>
+</li>
+
+
+<li>
+<a href="memorial.html">
+Memorial
+</a>
+</li>
+
+
+<li>
+<a href="contactos.html">
+Contactos
+</a>
+</li>
+
+
+</ul>
+
+
+
+<a href="contactos.html" class="nav-button">
+Fazer uma doação
+</a>
+
+
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+
+
+
+<main>
+
+
+
+<!-- CABEÇALHO DA PÁGINA -->
+
+<section class="page-header">
+
+
+<div class="container">
+
+
+<h1>
+Animais disponíveis para adoção
+</h1>
+
+
+<p>
+Conheça os animais que procuram uma família e descubra
+aquele que pode ser o seu novo companheiro.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- FILTROS -->
+
+
+<section>
+
+
+<div class="container">
+
+
+<div class="filters">
+
+
+
+<div class="search">
+
+<input 
+type="text"
+id="searchInput"
+placeholder="Pesquisar por nome..."
+>
+
+
+</div>
+
+
+
+
+
+<div class="filter-buttons">
+
+
+<button 
+class="filter active"
+data-filter="todos">
+
+Todos
+
+</button>
+
+
+
+<button 
+class="filter"
+data-filter="cao">
+
+Cães
+
+</button>
+
+
+
+<button 
+class="filter"
+data-filter="gato">
+
+Gatos
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ANIMAIS -->
+
+
+<section>
+
+
+<div class="container">
+
+
+<div 
+class="animals-grid"
+id="animalsGrid">
+
+
+<!-- 
+Os cartões dos animais
+são inseridos automaticamente
+pelo JavaScript
+-->
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+<!-- MODAL -->
+
+<div class="modal" id="animalModal">
+
+
+<div class="modal-content">
+
+
+<button class="close" id="closeModal">
+×
+</button>
+
+
+
+<div id="modalContent">
+
+<!-- Conteúdo inserido pelo JS -->
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<footer>
+
+
+<div class="container">
+
+
+<div class="footer-content">
+
+
+<p>
+© 2026 Animais para Adoção
+</p>
+
+
+
+<p>
+Home · Adoção · Memorial · Contactos
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+
+<script src="js/animais.js"></script>
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+
+
+</body>
+
+
+</html>
