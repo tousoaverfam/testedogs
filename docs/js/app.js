@@ -218,7 +218,7 @@ function criarCard(animal, memorial=false){
 
                 <button class="card-button">
 
-                    Adotar ${animal.nome}
+                        Saber Mais
 
                 </button>
 
@@ -505,59 +505,98 @@ function abrirModal(animal){
     content.innerHTML = `
 
 
-
-        <div class="modal-gallery">
-
-
-            ${animal.imagens.map(imagem=>`
-
-                <img src="${imagem}" alt="${animal.nome}">
-
-            `).join("")}
+<div class="modal-gallery">
 
 
+    ${animal.imagens.map((imagem,index)=>`
 
-        </div>
+        <img 
+        src="${imagem}" 
+        alt="${animal.nome}"
+        class="modal-image"
+        data-image="${imagem}">
+
+    `).join("")}
 
 
-
-
-
-        <div class="modal-info">
-
-
-            <h2>
-                ${animal.nome}
-            </h2>
+</div>
 
 
 
 
-            <p>
-                ${animal.historia}
-            </p>
+<div class="modal-info">
+
+
+    <div class="animal-top">
+
+        <h2>
+            ${animal.nome}
+        </h2>
+
+
+        <span class="species">
+
+            ${animal.especie === "cao" ? "Cão" : "Gato"}
+
+        </span>
+
+    </div>
 
 
 
 
-            <div class="characteristics">
+    <p class="age">
 
+        ${animal.idade} · ${animal.sexo}
 
-                ${animal.caracteristicas.map(item=>`
-
-                    <span>${item}</span>
-
-                `).join("")}
-
-
-            </div>
-
-
-        </div>
+    </p>
 
 
 
-    `;
+
+    <p>
+
+        ${animal.historia}
+
+    </p>
+
+
+
+
+
+    <div class="characteristics">
+
+
+        ${animal.caracteristicas.map(item=>`
+
+            <span>
+                ${item}
+            </span>
+
+        `).join("")}
+
+
+    </div>
+
+
+
+
+
+    <a 
+    href="contactos.html" 
+    class="btn btn-primary modal-adopt">
+
+
+        Adotar ${animal.nome}
+
+
+    </a>
+
+
+
+</div>
+
+`;
 
 
 
@@ -567,7 +606,20 @@ function abrirModal(animal){
 
 }
 
+document.querySelectorAll(".modal-image")
+.forEach(imagem=>{
 
+
+    imagem.addEventListener("click",()=>{
+
+
+        abrirImagem(imagem.src);
+
+
+    });
+
+
+});
 
 
 
@@ -619,7 +671,37 @@ document.addEventListener("click",(e)=>{
 // ==========================================
 // START
 // ==========================================
+function abrirImagem(src){
 
+
+    const imagemModal = document.createElement("div");
+
+
+    imagemModal.className="image-modal";
+
+
+    imagemModal.innerHTML=`
+
+        <img src="${src}">
+
+    `;
+
+
+
+    document.body.appendChild(imagemModal);
+
+
+
+    imagemModal.addEventListener("click",()=>{
+
+
+        imagemModal.remove();
+
+
+    });
+
+
+}
 
 document.addEventListener("DOMContentLoaded",()=>{
 
