@@ -1,3 +1,4 @@
+```json
 [
   {
     "id": 1,
@@ -5,7 +6,6 @@
 
     "nome": "Luna",
     "especie": "gato",
-    "tipo": "Gato",
 
     "idade": "2 anos",
     "sexo": "Fêmea",
@@ -19,6 +19,13 @@
       "Vacinada",
       "Desparasitada"
     ],
+
+    "observacoes": "Adora ambientes tranquilos e momentos de companhia.",
+
+    "adocao": {
+      "data": "",
+      "familia": ""
+    },
 
     "imagens": [
       "assets/images/placeholder.jpg",
@@ -34,7 +41,6 @@
 
     "nome": "Max",
     "especie": "cao",
-    "tipo": "Cão",
 
     "idade": "4 anos",
     "sexo": "Macho",
@@ -49,6 +55,13 @@
       "Sociável"
     ],
 
+    "observacoes": "Gosta de passeios e de brincar.",
+
+    "adocao": {
+      "data": "",
+      "familia": ""
+    },
+
     "imagens": [
       "assets/images/placeholder.jpg",
       "assets/images/placeholder.jpg"
@@ -62,7 +75,6 @@
 
     "nome": "Rex",
     "especie": "cao",
-    "tipo": "Cão",
 
     "idade": "6 anos",
     "sexo": "Macho",
@@ -76,17 +88,17 @@
       "Esterilizado"
     ],
 
+    "observacoes": "Adaptou-se rapidamente à sua nova família.",
 
     "adocao": {
       "data": "Fev 2025",
       "familia": "Família Silva"
     },
 
-
     "imagens": [
       "assets/images/placeholder.jpg",
       "assets/images/placeholder.jpg"
     ]
   }
-
 ]
+```
