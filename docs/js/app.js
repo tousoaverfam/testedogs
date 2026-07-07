@@ -1,1 +1,631 @@
+// ==========================================
+// CONFIGURAÇÃO
+// ==========================================
 
+
+let animais = [];
+
+
+
+
+
+// ==========================================
+// CARREGAR DADOS
+// ==========================================
+
+
+async function carregarAnimais(){
+
+
+    try{
+
+
+        const resposta = await fetch("dados.json");
+
+
+        animais = await resposta.json();
+
+
+
+        carregarPagina();
+
+
+
+    }catch(error){
+
+
+        console.error("Erro ao carregar animais:", error);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+// ==========================================
+// DETETAR PÁGINA
+// ==========================================
+
+
+function carregarPagina(){
+
+
+
+    const pagina = window.location.pathname.split("/").pop();
+
+
+
+    if(pagina === "adocao.html"){
+
+        criarAnimaisAdocao();
+
+        iniciarFiltros();
+
+    }
+
+
+
+    if(pagina === "memorial.html"){
+
+        criarAnimaisAdotados();
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+// ==========================================
+// CARTÃO DO ANIMAL
+// ==========================================
+
+
+function criarCard(animal, memorial=false){
+
+
+    const card = document.createElement("div");
+
+
+    card.classList.add("animal-card");
+
+
+
+    card.dataset.nome = animal.nome.toLowerCase();
+
+
+
+
+    let dataAdocao = "";
+
+
+
+    if(memorial && animal.adocao){
+
+
+        dataAdocao = `
+
+            <span class="species">
+                ${animal.adocao.data}
+            </span>
+
+        `;
+
+
+    }
+
+
+
+    card.innerHTML = `
+
+
+        <div class="animal-image">
+
+
+            <img 
+            src="${animal.imagens[0]}"
+            alt="${animal.nome}">
+
+
+        </div>
+
+
+
+
+        <div class="animal-content">
+
+
+            <div class="animal-top">
+
+
+                <h3 class="animal-name">
+
+                    ${animal.nome}
+
+                </h3>
+
+
+
+                ${
+                    memorial 
+                    ? dataAdocao
+                    :
+                    `<span class="species">
+                        ${animal.especie === "cao" ? "Cão" : "Gato"}
+                    </span>`
+                }
+
+
+            </div>
+
+
+
+
+
+
+            ${
+                memorial
+                ?
+
+                `
+
+                <p class="description">
+
+                    ${animal.descricao}
+
+                </p>
+
+
+                <p>
+
+                    Adotado por ${animal.adocao.familia}
+
+                </p>
+
+                `
+
+                :
+
+                `
+
+                <p class="age">
+
+                    ${animal.idade}
+
+                </p>
+
+
+
+                <p class="description">
+
+                    ${animal.descricao}
+
+                </p>
+
+
+
+                <button class="card-button">
+
+                    Adotar ${animal.nome}
+
+                </button>
+
+                `
+
+            }
+
+
+
+        </div>
+
+
+    `;
+
+
+
+    card.addEventListener("click",()=>{
+
+
+        abrirModal(animal);
+
+
+    });
+
+
+
+    return card;
+
+
+}
+
+
+
+
+
+
+
+
+
+// ==========================================
+// PÁGINA PARA ADOÇÃO
+// ==========================================
+
+
+function criarAnimaisAdocao(){
+
+
+    const grid = document.getElementById("animalsGrid");
+
+
+    if(!grid) return;
+
+
+
+    grid.innerHTML = "";
+
+
+
+    const disponiveis = animais.filter(animal => 
+        animal.estado === "disponivel"
+    );
+
+
+
+    disponiveis.forEach(animal=>{
+
+
+        grid.appendChild(
+            criarCard(animal)
+        );
+
+
+    });
+
+
+}
+
+
+
+
+
+
+
+
+
+// ==========================================
+// PÁGINA ADOTADOS
+// ==========================================
+
+
+function criarAnimaisAdotados(){
+
+
+    const grid = document.getElementById("memorialGrid");
+
+
+
+    if(!grid) return;
+
+
+
+    grid.innerHTML = "";
+
+
+
+    const adotados = animais.filter(animal => 
+        animal.estado === "adotado"
+    );
+
+
+
+    adotados.forEach(animal=>{
+
+
+        grid.appendChild(
+            criarCard(animal,true)
+        );
+
+
+    });
+
+
+}
+
+
+
+
+
+
+
+
+
+// ==========================================
+// FILTROS
+// ==========================================
+
+
+function iniciarFiltros(){
+
+
+
+    const botoes = document.querySelectorAll(".filter");
+
+
+    const pesquisa = document.getElementById("searchInput");
+
+
+
+    let filtroAtual = "todos";
+
+
+
+
+    botoes.forEach(botao=>{
+
+
+        botao.addEventListener("click",()=>{
+
+
+            botoes.forEach(b=>b.classList.remove("active"));
+
+
+
+            botao.classList.add("active");
+
+
+
+            filtroAtual = botao.dataset.filter;
+
+
+
+            aplicarFiltros();
+
+
+        });
+
+
+    });
+
+
+
+
+
+
+    pesquisa.addEventListener("input",()=>{
+
+
+        aplicarFiltros();
+
+
+    });
+
+
+
+
+
+
+    function aplicarFiltros(){
+
+
+        const texto = pesquisa.value.toLowerCase();
+
+
+
+        const cards = document.querySelectorAll(".animal-card");
+
+
+
+        cards.forEach(card=>{
+
+
+            const nome = card.dataset.nome;
+
+
+
+            const animal = animais.find(a =>
+                a.nome.toLowerCase() === nome
+            );
+
+
+
+            const correspondeNome =
+                animal.nome.toLowerCase().includes(texto);
+
+
+
+            const correspondeFiltro =
+                filtroAtual === "todos" ||
+                animal.especie === filtroAtual;
+
+
+
+            if(
+                correspondeNome &&
+                correspondeFiltro
+            ){
+
+                card.style.display="block";
+
+            }else{
+
+                card.style.display="none";
+
+            }
+
+
+        });
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// ==========================================
+// MODAL
+// ==========================================
+
+
+function abrirModal(animal){
+
+
+
+    const modal = document.getElementById("animalModal");
+
+
+    const content = document.getElementById("modalContent");
+
+
+
+    if(!modal || !content) return;
+
+
+
+
+
+    content.innerHTML = `
+
+
+
+        <div class="modal-gallery">
+
+
+            ${animal.imagens.map(imagem=>`
+
+                <img src="${imagem}" alt="${animal.nome}">
+
+            `).join("")}
+
+
+
+        </div>
+
+
+
+
+
+        <div class="modal-info">
+
+
+            <h2>
+                ${animal.nome}
+            </h2>
+
+
+
+
+            <p>
+                ${animal.historia}
+            </p>
+
+
+
+
+            <div class="characteristics">
+
+
+                ${animal.caracteristicas.map(item=>`
+
+                    <span>${item}</span>
+
+                `).join("")}
+
+
+            </div>
+
+
+        </div>
+
+
+
+    `;
+
+
+
+    modal.classList.add("active");
+
+
+
+}
+
+
+
+
+
+
+
+function fecharModal(){
+
+
+    const modal = document.getElementById("animalModal");
+
+
+    if(modal){
+
+        modal.classList.remove("active");
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+document.addEventListener("click",(e)=>{
+
+
+    if(
+        e.target.id === "closeModal" ||
+        e.target.classList.contains("modal")
+    ){
+
+        fecharModal();
+
+    }
+
+
+});
+
+
+
+
+
+
+
+// ==========================================
+// START
+// ==========================================
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+
+    carregarAnimais();
+
+
+});
+```
