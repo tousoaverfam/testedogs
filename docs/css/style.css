@@ -892,6 +892,13 @@ nav{
 
 
 
+.modal-info{
+
+    padding:30px;
+
+}
+
+
 .modal-info .animal-top{
 
     width:100%;
@@ -903,8 +910,6 @@ nav{
     align-items:center;
 
 }
-
-
 
 .modal-info h2{
 
@@ -912,19 +917,7 @@ nav{
 
 }
 
-.modal-info .animal-top{
 
-    width:100%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding-right:5px;
-
-}
 
 .modal-info p{
 
