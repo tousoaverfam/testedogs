@@ -792,11 +792,11 @@ function abrirGaleria(imagens,index){
 
 
 
-    document.body.appendChild(galeria);
+      document.body.appendChild(galeria);
 
 
 
-    atualizarImagemGaleria();
+        atualizarImagemGaleria(galeria);
 
 
 
@@ -851,11 +851,11 @@ function abrirGaleria(imagens,index){
 
 
 
-function atualizarImagemGaleria(){
+function atualizarImagemGaleria(galeria){
 
 
     const imagem =
-    document.querySelector(".gallery-image");
+    galeria.querySelector(".gallery-image");
 
 
     if(!imagem) return;
@@ -863,7 +863,6 @@ function atualizarImagemGaleria(){
 
 
     imagem.style.opacity="0";
-
 
 
     setTimeout(()=>{
@@ -897,7 +896,9 @@ function imagemSeguinte(){
     }
 
 
-    atualizarImagemGaleria();
+    atualizarImagemGaleria(
+    document.querySelector(".image-modal")
+);
 
 
 }
@@ -919,7 +920,9 @@ function imagemAnterior(){
     }
 
 
-    atualizarImagemGaleria();
+    atualizarImagemGaleria(
+    document.querySelector(".image-modal")
+);
 
 
 }
