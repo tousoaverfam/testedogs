@@ -630,18 +630,21 @@ function abrirModal(animal){
     // ==========================================
 
 
-    document.querySelectorAll(".modal-image")
-    .forEach(imagem=>{
+        document.querySelectorAll(".modal-image")
+            .forEach((imagem,index)=>{
 
 
-        imagem.addEventListener("click",()=>{
+            imagem.addEventListener("click",()=>{
 
 
-            abrirImagem(imagem.src);
+            abrirGaleria(
+                animal.imagens,
+                index
+            );
 
 
         });
-
+    
 
     });
 
