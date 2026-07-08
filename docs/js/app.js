@@ -64,7 +64,29 @@ function carregarPagina(){
     if(pagina === "adocao.html"){
 
         criarAnimaisAdocao();
+function criarAnimaisDestaque(){
 
+    const slider =
+    document.getElementById("featuredSlider");
+
+    if(!slider) return;
+
+    slider.innerHTML="";
+
+    const disponiveis =
+    animais.filter(animal =>
+        animal.estado==="disponivel"
+    );
+
+    disponiveis.forEach(animal=>{
+
+        slider.appendChild(
+            criarCard(animal)
+        );
+
+    });
+
+}
         iniciarFiltros();
 
     }
