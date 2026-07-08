@@ -734,3 +734,8 @@ function abrirImagem(src){
     });
 
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+    carregarAnimais();
+
+});
