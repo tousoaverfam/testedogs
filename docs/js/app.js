@@ -93,12 +93,25 @@ function criarAnimaisDestaque(){
 
 
 
-    if(pagina === "memorial.html"){
+  if(pagina==="adocao.html"){
 
-        criarAnimaisAdotados();
+    criarAnimaisAdocao();
 
-    }
+    iniciarFiltros();
 
+}
+
+if(pagina==="memorial.html"){
+
+    criarAnimaisAdotados();
+
+}
+
+if(pagina==="index.html" || pagina===""){
+
+    criarAnimaisDestaque();
+
+}
 
 
 }
