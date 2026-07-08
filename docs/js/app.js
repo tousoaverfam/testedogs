@@ -604,9 +604,9 @@ function abrirModal(animal){
 
                 <p class="adopted-message">
 
-                    ❤️ Este animal já encontrou uma família.
+                       ❤️ O ${animal.nome} já foi adotado pela família ${animal.adocao.familia}.
 
-                </p>
+                  </p>
 
                 `
 
