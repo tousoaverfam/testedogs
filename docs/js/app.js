@@ -699,46 +699,283 @@ document.addEventListener("click",(e)=>{
 // ==========================================
 // START
 // ==========================================
-function abrirImagem(src){
+let galeriaAtual = [];
+let imagemAtual = 0;
 
-    const imagemModal = document.createElement("div");
 
-    imagemModal.className = "image-modal";
 
-    imagemModal.innerHTML = `
+function abrirGaleria(imagens,index){
+
+
+    galeriaAtual = imagens;
+
+    imagemAtual = index;
+
+
+
+    const galeria = document.createElement("div");
+
+
+    galeria.className="image-modal";
+
+
+    galeria.innerHTML = `
+
 
         <div class="image-modal-content">
 
+
             <button class="image-close">
 
-                &times;
+                ×
 
             </button>
 
-            <img src="${src}" alt="Imagem do animal">
+
+
+            ${
+                imagens.length > 1
+
+                ?
+
+                `
+
+                <button class="gallery-prev">
+                    ❮
+                </button>
+
+
+                `
+
+                :
+
+                ""
+
+            }
+
+
+
+            <img 
+            class="gallery-image"
+            src="${imagens[imagemAtual]}">
+
+
+
+
+
+            ${
+                imagens.length > 1
+
+                ?
+
+                `
+
+                <button class="gallery-next">
+                    ❯
+                </button>
+
+
+                `
+
+                :
+
+                ""
+
+            }
+
+
 
         </div>
 
+
     `;
 
-    document.body.appendChild(imagemModal);
 
-    imagemModal.addEventListener("click",(e)=>{
 
-        if(
-            e.target.classList.contains("image-modal") ||
-            e.target.classList.contains("image-close")
-        ){
+    document.body.appendChild(galeria);
 
-            imagemModal.remove();
+
+
+    atualizarImagemGaleria();
+
+
+
+    galeria.querySelector(".image-close")
+    .onclick = ()=>{
+
+        galeria.remove();
+
+    };
+
+
+
+    if(imagens.length > 1){
+
+
+        galeria.querySelector(".gallery-prev")
+        .onclick = imagemAnterior;
+
+
+
+        galeria.querySelector(".gallery-next")
+        .onclick = imagemSeguinte;
+
+
+    }
+
+
+
+    document.addEventListener(
+        "keydown",
+        controlarTeclado
+    );
+
+
+
+    galeria.addEventListener("click",(e)=>{
+
+
+        if(e.target === galeria){
+
+            fecharGaleria(galeria);
 
         }
 
+
     });
 
+
+
 }
-document.addEventListener("DOMContentLoaded", () => {
 
-    carregarAnimais();
 
-});
+
+
+function atualizarImagemGaleria(){
+
+
+    const imagem =
+    document.querySelector(".gallery-image");
+
+
+    if(!imagem) return;
+
+
+
+    imagem.style.opacity="0";
+
+
+
+    setTimeout(()=>{
+
+
+        imagem.src =
+        galeriaAtual[imagemAtual];
+
+
+        imagem.style.opacity="1";
+
+
+    },150);
+
+
+}
+
+
+
+
+function imagemSeguinte(){
+
+
+    imagemAtual++;
+
+
+    if(imagemAtual >= galeriaAtual.length){
+
+        imagemAtual=0;
+
+    }
+
+
+    atualizarImagemGaleria();
+
+
+}
+
+
+
+
+function imagemAnterior(){
+
+
+    imagemAtual--;
+
+
+    if(imagemAtual < 0){
+
+        imagemAtual =
+        galeriaAtual.length-1;
+
+    }
+
+
+    atualizarImagemGaleria();
+
+
+}
+
+
+
+
+function controlarTeclado(e){
+
+
+    if(e.key==="Escape"){
+
+        const modal =
+        document.querySelector(".image-modal");
+
+
+        if(modal){
+
+            fecharGaleria(modal);
+
+        }
+
+    }
+
+
+
+    if(e.key==="ArrowRight"){
+
+        imagemSeguinte();
+
+    }
+
+
+
+    if(e.key==="ArrowLeft"){
+
+        imagemAnterior();
+
+    }
+
+
+}
+
+
+
+
+function fecharGaleria(galeria){
+
+
+    document.removeEventListener(
+        "keydown",
+        controlarTeclado
+    );
+
+
+    galeria.remove();
+
+
+}
