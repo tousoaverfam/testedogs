@@ -982,3 +982,14 @@ function fecharGaleria(galeria){
 
 
 }
+
+
+// ==========================================
+// INICIAR APLICAÇÃO
+// ==========================================
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    carregarAnimais();
+
+});
