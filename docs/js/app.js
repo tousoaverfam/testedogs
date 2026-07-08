@@ -698,38 +698,39 @@ document.addEventListener("click",(e)=>{
 // ==========================================
 function abrirImagem(src){
 
-
     const imagemModal = document.createElement("div");
 
+    imagemModal.className = "image-modal";
 
-    imagemModal.className="image-modal";
+    imagemModal.innerHTML = `
 
+        <div class="image-modal-content">
 
-    imagemModal.innerHTML=`
+            <button class="image-close">
 
-        <img src="${src}">
+                &times;
+
+            </button>
+
+            <img src="${src}" alt="Imagem do animal">
+
+        </div>
 
     `;
 
-
-
     document.body.appendChild(imagemModal);
 
+    imagemModal.addEventListener("click",(e)=>{
 
+        if(
+            e.target.classList.contains("image-modal") ||
+            e.target.classList.contains("image-close")
+        ){
 
-    imagemModal.addEventListener("click",()=>{
+            imagemModal.remove();
 
-        imagemModal.remove();
+        }
 
     });
 
-
 }
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-
-    carregarAnimais();
-
-
-});
