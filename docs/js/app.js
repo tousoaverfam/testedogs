@@ -52,33 +52,46 @@ async function carregarAnimais(){
 // DETETAR PÁGINA
 // ==========================================
 
-
 function carregarPagina(){
 
-
-
     const pagina = window.location.pathname.split("/").pop();
-
-
 
     if(pagina === "adocao.html"){
 
         criarAnimaisAdocao();
+        iniciarFiltros();
+
+    }
+
+    if(pagina === "memorial.html"){
+
+        criarAnimaisAdotados();
+
+    }
+
+    if(pagina === "index.html" || pagina === ""){
+
+        criarAnimaisDestaque();
+
+    }
+
+}
+
+
+
 function criarAnimaisDestaque(){
 
-    const slider =
-    document.getElementById("featuredSlider");
+    const slider = document.getElementById("featuredSlider");
 
     if(!slider) return;
 
-    slider.innerHTML="";
+    slider.innerHTML = "";
 
-    const disponiveis =
-    animais.filter(animal =>
-        animal.estado==="disponivel"
+    const disponiveis = animais.filter(animal =>
+        animal.estado === "disponivel"
     );
 
-    disponiveis.forEach(animal=>{
+    disponiveis.forEach(animal => {
 
         slider.appendChild(
             criarCard(animal)
@@ -87,37 +100,6 @@ function criarAnimaisDestaque(){
     });
 
 }
-        iniciarFiltros();
-
-    }
-
-
-
-  if(pagina==="adocao.html"){
-
-    criarAnimaisAdocao();
-
-    iniciarFiltros();
-
-}
-
-if(pagina==="memorial.html"){
-
-    criarAnimaisAdotados();
-
-}
-
-if(pagina==="index.html" || pagina===""){
-
-    criarAnimaisDestaque();
-
-}
-
-
-}
-
-
-
 
 
 
