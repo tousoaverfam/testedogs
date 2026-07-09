@@ -94,8 +94,8 @@ function criarAnimaisDestaque(){
     disponiveis.forEach(animal => {
 
         slider.appendChild(
-            criarCard(animal)
-        );
+    criarCard(animal,false,true)
+);
 
     });
 
@@ -110,7 +110,7 @@ function criarAnimaisDestaque(){
 // ==========================================
 
 
-function criarCard(animal, memorial=false){
+function criarCard(animal, memorial=false, destaque=false){
 
 
     const card = document.createElement("div");
@@ -252,14 +252,19 @@ function criarCard(animal, memorial=false){
 
 
 
-    card.addEventListener("click",()=>{
+   card.addEventListener("click",()=>{
 
+    if(destaque){
+
+        window.location.href = "adocao.html";
+
+    }else{
 
         abrirModal(animal);
 
+    }
 
-    });
-
+});
 
 
     return card;
