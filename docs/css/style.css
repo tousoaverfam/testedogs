@@ -1402,3 +1402,86 @@ footer{
     scroll-snap-align:start;
 
 }
+
+/* ==========================================
+   CONTRIBUTIONS CAROUSEL
+========================================== */
+
+
+.donations-items{
+
+    padding:70px 0;
+
+}
+
+
+
+.items-slider{
+
+    display:flex;
+
+    gap:24px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    padding-bottom:15px;
+
+}
+
+
+
+.items-slider::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+
+
+.items-slider::-webkit-scrollbar-thumb{
+
+    background:#d8d8d8;
+
+    border-radius:999px;
+
+}
+
+
+
+.item-card{
+
+    min-width:260px;
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    scroll-snap-align:start;
+
+}
+
+
+
+.item-card img{
+
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+
+
+.item-card h3{
+
+    padding:20px;
+
+    font-size:1.1rem;
+
+}
