@@ -71,9 +71,11 @@ function carregarPagina(){
 
     if(pagina === "index.html" || pagina === ""){
 
-        criarAnimaisDestaque();
+    criarAnimaisDestaque();
 
-    }
+    criarHeroGallery();
+
+}
 
 }
 
@@ -101,7 +103,41 @@ function criarAnimaisDestaque(){
 
 }
 
+function criarHeroGallery(){
 
+
+    const gallery = document.getElementById("heroGallery");
+
+
+    if(!gallery) return;
+
+
+    gallery.innerHTML = "";
+
+
+    const disponiveis = animais.filter(animal =>
+        animal.estado === "disponivel"
+    );
+
+
+    disponiveis.slice(0,4).forEach(animal=>{
+
+
+        const imagem = document.createElement("img");
+
+
+        imagem.src = animal.imagens[0];
+
+        imagem.alt = animal.nome;
+
+
+        gallery.appendChild(imagem);
+
+
+    });
+
+
+}
 
 
 
