@@ -17,7 +17,7 @@ function renderHeader() {
 
 
                 <a href="index.html" class="logo">
-                    🐾 Animais para Adoção
+                    Animais para Adoção
                 </a>
 
 
