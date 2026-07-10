@@ -747,7 +747,7 @@ nav{
 }
 
 
-.card-button{
+..card-button{
 
     width:100%;
 
@@ -763,8 +763,9 @@ nav{
 
     font-weight:700;
 
-}
+    display:block;
 
+}
 
 
 .card-button:hover{
@@ -1499,23 +1500,6 @@ footer{
    ALINHAMENTO DOS BOTÕES DOS CARDS
 ========================================== */
 
-.animal-content{
-
-    display:flex;
-
-    flex-direction:column;
-
-    height:100%;
-
-}
-
-
-.card-button{
-
-    margin-top:auto;
-
-}
-
 .featured-slider .animal-card{
 
     height:100%;
@@ -1525,5 +1509,32 @@ footer{
 .featured-slider{
 
     align-items:stretch;
+
+}
+/* ==========================================
+   CARROSSEL HOME
+========================================== */
+
+.featured-slider .animal-card{
+
+    height:560px;
+
+}
+
+
+.featured-slider .animal-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:300px;
+
+}
+
+
+.featured-slider .card-button{
+
+    margin-top:auto;
 
 }
