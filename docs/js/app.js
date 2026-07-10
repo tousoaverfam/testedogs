@@ -65,10 +65,21 @@ function criarAnimaisDestaque(){
     disponiveis.forEach(animal => {
 
         slider.appendChild(
-    criarCard(animal,false,true)
-);
+            criarCard(animal,false,true)
+        );
 
     });
+
+
+    if(disponiveis.length < 4){
+
+        slider.style.justifyContent = "center";
+
+    }else{
+
+        slider.style.justifyContent = "flex-start";
+
+    }
 
 }
 
