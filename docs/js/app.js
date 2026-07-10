@@ -24,17 +24,14 @@ async function carregarAnimais(){
 
 
         animais = await resposta.json();
-
-
-
-        Pagina();
+        carregarPagina();
 
 
 
     }catch(error){
 
 
-        console.error("Erro ao  animais:", error);
+        console.error("Erro ao carregar animais:", error);
 
 
     }
@@ -180,45 +177,6 @@ function carregarHeroGallery(){
 
 
 }
-
-
-function criarHeroGallery(){
-
-
-    const gallery = document.getElementById("heroGallery");
-
-
-    if(!gallery) return;
-
-
-    gallery.innerHTML = "";
-
-
-    const disponiveis = animais.filter(animal =>
-        animal.estado === "disponivel"
-    );
-
-
-    disponiveis.slice(0,4).forEach(animal=>{
-
-
-        const imagem = document.createElement("img");
-
-
-        imagem.src = animal.imagens[0];
-
-        imagem.alt = animal.nome;
-
-
-        gallery.appendChild(imagem);
-
-
-    });
-
-
-}
-
-
 
 // ==========================================
 // CARTÃO DO ANIMAL
