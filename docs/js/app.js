@@ -71,6 +71,8 @@ function criarAnimaisDestaque(){
     });
 
 
+   if(window.innerWidth > 700){
+
     if(disponiveis.length < 4){
 
         slider.style.justifyContent = "center";
@@ -80,6 +82,8 @@ function criarAnimaisDestaque(){
         slider.style.justifyContent = "flex-start";
 
     }
+
+}
 
 }
 
