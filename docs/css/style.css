@@ -747,7 +747,7 @@ nav{
 }
 
 
-..card-button{
+.card-button{
 
     width:100%;
 
@@ -763,7 +763,9 @@ nav{
 
     font-weight:700;
 
-    display:block;
+    cursor:pointer;
+
+    transition:var(--transition);
 
 }
 
@@ -1326,6 +1328,12 @@ footer{
 
 }
 
+.featured-slider .card-button{
+
+    margin-top:auto;
+
+}
+
 /* ==========================================
    CONTRIBUTIONS CAROUSEL
 ========================================== */
@@ -1511,6 +1519,10 @@ footer{
     align-items:stretch;
 
 }
+/* ==========================================
+   CARROSSEL HOME
+========================================== */
+
 /* ==========================================
    CARROSSEL HOME
 ========================================== */
