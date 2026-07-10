@@ -101,7 +101,7 @@
 
   {
     "id": 4,
-    "estado": "disponível",
+    "estado": "disponivel",
 
     "nome": "Fluffy",
     "especie": "cao",
@@ -121,12 +121,12 @@
     "observacoes": "Adaptou-se rapidamente à sua nova família.",
 
     "adocao": {
-      "data": "Fev 2025",
-      "familia": "Família Silva"
+      "data": "",
+      "familia": ""
     },
 
     "imagens": [
-      "assets/images/fluffy-1.jpg",
+      "assets/images/fluffy-1.jpg"
           ]
   }
 ]
