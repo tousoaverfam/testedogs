@@ -97,5 +97,37 @@
       "assets/images/placeholder.jpg",
       "assets/images/placeholder.jpg"
     ]
+  },
+
+  {
+    "id": 4,
+    "estado": "disponível",
+
+    "nome": "Fluffy",
+    "especie": "cao",
+
+    "idade": "7 anos",
+    "sexo": "Macho",
+
+    "descricao": "Só quer vida boa.",
+
+    "historia": "Depois de uma fase difícil, o Rex encontrou uma nova casa. Hoje vive rodeado de carinho e atenção.",
+
+    "caracteristicas": [
+      "Vacinado",
+      "Esterilizado"
+    ],
+
+    "observacoes": "Adaptou-se rapidamente à sua nova família.",
+
+    "adocao": {
+      "data": "Fev 2025",
+      "familia": "Família Silva"
+    },
+
+    "imagens": [
+      "assets/images/placeholder.jpg",
+      "assets/images/placeholder.jpg"
+    ]
   }
 ]
