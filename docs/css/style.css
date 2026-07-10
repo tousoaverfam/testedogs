@@ -437,8 +437,6 @@ nav{
 
 }
 
-
-
 .info-card{
 
     background:var(--card);
@@ -474,8 +472,6 @@ nav{
     margin-bottom:18px;
 
 }
-
-
 
 .info-card h3{
 
@@ -528,10 +524,6 @@ nav{
 
 }
 
-
-
-
-
 /* ==========================================
    FILTERS
 ========================================== */
@@ -552,8 +544,6 @@ nav{
     flex-wrap:wrap;
 
 }
-
-
 
 .search{
 
@@ -588,10 +578,6 @@ nav{
     border-color:var(--primary);
 
 }
-
-
-
-
 
 .filter-buttons{
 
@@ -635,10 +621,6 @@ nav{
 
 }
 
-
-
-
-
 /* ==========================================
    ANIMAL CARDS
 ========================================== */
@@ -675,8 +657,6 @@ nav{
 
 }
 
-
-
 .animal-card:hover{
 
     transform:translateY(-8px);
@@ -702,10 +682,6 @@ nav{
 
 }
 
-
-
-
-
 .animal-content{
 
     padding:24px;
@@ -729,10 +705,6 @@ nav{
     margin-bottom:8px;
 
 }
-
-
-
-
 
 .animal-name{
 
@@ -775,8 +747,6 @@ nav{
 }
 
 
-
-
 .card-button{
 
     width:100%;
@@ -802,9 +772,6 @@ nav{
     background:var(--primary-dark);
 
 }
-
-
-
 
 /* ==========================================
    MODAL
@@ -859,8 +826,6 @@ nav{
 
 }
 
-
-
 .close{
 
     position:absolute;
@@ -884,9 +849,6 @@ nav{
     z-index:2;
 
 }
-
-
-
 
 
 .modal-gallery{
@@ -913,10 +875,6 @@ nav{
 
 }
 
-
-
-
-
 .modal-info{
 
     padding:30px;
@@ -936,7 +894,6 @@ nav{
 
 }
 
-
 .modal-info .species{
 
     padding-right:12px;
@@ -950,16 +907,11 @@ nav{
 
 }
 
-
-
 .modal-info p{
 
     color:var(--text-light);
 
 }
-
-
-
 
 
 .characteristics{
@@ -990,11 +942,6 @@ nav{
 
 }
 
-
-
-
-
-
 /* ==========================================
    CONTACTOS
 ========================================== */
@@ -1005,10 +952,6 @@ nav{
     text-align:left;
 
 }
-
-
-
-
 /* ==========================================
    FOOTER
 ========================================== */
@@ -1042,10 +985,6 @@ footer{
 
 }
 
-
-
-
-
 /* ==========================================
    RESPONSIVE
 ========================================== */
@@ -1077,9 +1016,6 @@ footer{
 
 }
 
-
-
-
 @media(max-width:700px){
 
 
@@ -1110,7 +1046,6 @@ footer{
 
     }
 
-
     .animals-grid{
 
         grid-template-columns:1fr;
@@ -1140,7 +1075,6 @@ footer{
 
     }
 
-
 }
 
 .modal-image{
@@ -1151,14 +1085,11 @@ footer{
 
 }
 
-
 .modal-image:hover{
 
     transform:scale(1.03);
 
 }
-
-
 
 .modal-adopt{
 
@@ -1167,8 +1098,6 @@ footer{
     display:inline-flex;
 
 }
-
-
 
 .image-modal{
 
@@ -1191,7 +1120,6 @@ footer{
 }
 
 
-
 .image-modal-content{
 
     position:relative;
@@ -1203,8 +1131,6 @@ footer{
     justify-content:center;
 
 }
-
-
 
 .gallery-image{
 
@@ -1252,8 +1178,6 @@ footer{
     z-index:2;
 
 }
-
-
 
 .gallery-prev,
 .gallery-next{
@@ -1319,8 +1243,6 @@ footer{
 
 
 }
-
-
 
 
 @media(max-width:700px){
@@ -1415,7 +1337,6 @@ footer{
 }
 
 
-
 .items-slider{
 
     display:flex;
@@ -1431,14 +1352,11 @@ footer{
 }
 
 
-
 .items-slider::-webkit-scrollbar{
 
     height:8px;
 
 }
-
-
 
 .items-slider::-webkit-scrollbar-thumb{
 
@@ -1466,8 +1384,6 @@ footer{
 
 }
 
-
-
 .item-card img{
 
     height:180px;
@@ -1477,11 +1393,104 @@ footer{
 }
 
 
-
 .item-card h3{
 
     padding:20px;
 
     font-size:1.1rem;
+
+}
+/* ==========================================
+   HOME - CARDS DESTAQUE
+========================================== */
+
+
+.featured-slider .animal-card{
+
+    min-width:260px;
+
+    max-width:260px;
+
+}
+
+
+/* ==========================================
+   MOBILE OPTIMIZATION
+========================================== */
+
+
+@media(max-width:700px){
+
+
+    /* Centralizar conteúdo da Home */
+
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+
+    .hero-small{
+
+        display:block;
+
+    }
+
+
+    .hero p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    /* Ajustar galeria 2x2 */
+
+    .hero-gallery{
+
+        width:100%;
+
+    }
+
+
+    /* Manter carrossel horizontal */
+
+    .featured-slider{
+
+        padding-left:10px;
+
+        padding-right:10px;
+
+    }
+
+
+    .featured-slider .animal-card{
+
+        min-width:240px;
+
+        max-width:240px;
+
+    }
+
+
+}
+
+@media(max-width:700px){
+
+    .featured-slider .animal-image{
+
+        height:190px;
+
+    }
 
 }
