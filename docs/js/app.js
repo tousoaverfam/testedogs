@@ -1,50 +1,26 @@
 // ==========================================
 // CONFIGURAÇÃO
 // ==========================================
-
-
 let animais = [];
-
-
-
-
-
 // ==========================================
 // CARREGAR DADOS
 // ==========================================
-
-
 async function carregarAnimais(){
-
 
     try{
 
-
         const resposta = await fetch("dados.json");
-
 
         animais = await resposta.json();
         carregarPagina();
 
-
-
     }catch(error){
-
 
         console.error("Erro ao carregar animais:", error);
 
-
     }
 
-
 }
-
-
-
-
-
-
-
 // ==========================================
 // DETETAR PÁGINA
 // ==========================================
@@ -57,7 +33,6 @@ function carregarPagina(){
 
         criarAnimaisAdocao();
         iniciarFiltros();
-
     }
 
     if(pagina === "memorial.html"){
@@ -74,8 +49,6 @@ function carregarPagina(){
     }
 
 }
-
-
 
 function criarAnimaisDestaque(){
 
@@ -101,7 +74,6 @@ function criarAnimaisDestaque(){
 
 function carregarHeroGallery(){
 
-
     const gallery = document.querySelector(".hero-gallery");
 
 
@@ -116,7 +88,6 @@ function carregarHeroGallery(){
     let animaisHero = [];
 
 
-
     // Primeiro carregar animais disponíveis
 
     const disponiveis = animais.filter(animal =>
@@ -124,9 +95,7 @@ function carregarHeroGallery(){
     );
 
 
-
     animaisHero = [...disponiveis];
-
 
 
     // Se não houver 4, completar com adotados
@@ -150,8 +119,6 @@ function carregarHeroGallery(){
 
     }
 
-
-
     // Garantir máximo de 4 imagens
 
     animaisHero = animaisHero.slice(0,4);
@@ -172,10 +139,7 @@ function carregarHeroGallery(){
 
         gallery.appendChild(imagem);
 
-
     });
-
-
 }
 
 // ==========================================
@@ -196,8 +160,6 @@ function criarCard(animal, memorial=false, destaque=false){
     card.dataset.nome = animal.nome.toLowerCase();
 
 
-
-
     let dataAdocao = "";
 
 
@@ -216,37 +178,25 @@ function criarCard(animal, memorial=false, destaque=false){
 
     }
 
-
-
     card.innerHTML = `
 
-
         <div class="animal-image">
-
 
             <img 
             src="${animal.imagens[0]}"
             alt="${animal.nome}">
 
-
         </div>
-
-
-
 
         <div class="animal-content">
 
-
             <div class="animal-top">
-
 
                 <h3 class="animal-name">
 
                     ${animal.nome}
 
                 </h3>
-
-
 
                 ${
                     memorial 
@@ -257,54 +207,35 @@ function criarCard(animal, memorial=false, destaque=false){
                     </span>`
                 }
 
-
             </div>
-
-
-
-
-
 
             ${
                 memorial
                 ?
-
                 `
-
                 <p class="description">
-
                     ${animal.descricao}
-
                 </p>
-
 
                 <p>
 
                     Adotado por ${animal.adocao.familia}
 
                 </p>
-
                 `
-
                 :
-
                 `
-
                 <p class="age">
 
                     ${animal.idade}
 
                 </p>
 
-
-
                 <p class="description">
 
                     ${animal.descricao}
 
                 </p>
-
-
 
                 <button class="card-button">
 
@@ -313,17 +244,10 @@ function criarCard(animal, memorial=false, destaque=false){
                 </button>
 
                 `
-
             }
 
-
-
         </div>
-
-
     `;
-
-
 
    card.addEventListener("click",()=>{
 
@@ -338,20 +262,8 @@ function criarCard(animal, memorial=false, destaque=false){
     }
 
 });
-
-
     return card;
-
-
 }
-
-
-
-
-
-
-
-
 
 // ==========================================
 // PÁGINA PARA ADOÇÃO
@@ -390,15 +302,6 @@ function criarAnimaisAdocao(){
 
 
 }
-
-
-
-
-
-
-
-
-
 // ==========================================
 // PÁGINA ADOTADOS
 // ==========================================
@@ -437,15 +340,6 @@ function criarAnimaisAdotados(){
 
 
 }
-
-
-
-
-
-
-
-
-
 // ==========================================
 // FILTROS
 // ==========================================
@@ -472,29 +366,21 @@ function iniciarFiltros(){
 
         botao.addEventListener("click",()=>{
 
-
             botoes.forEach(b=>b.classList.remove("active"));
-
 
 
             botao.classList.add("active");
 
 
-
             filtroAtual = botao.dataset.filter;
 
 
-
             aplicarFiltros();
-
 
         });
 
 
     });
-
-
-
 
 
 
@@ -505,10 +391,6 @@ function iniciarFiltros(){
 
 
     });
-
-
-
-
 
 
     function aplicarFiltros(){
@@ -567,14 +449,6 @@ function iniciarFiltros(){
 
 
 }
-
-
-
-
-
-
-
-
 // ==========================================
 // MODAL
 // ==========================================
@@ -600,7 +474,6 @@ function abrirModal(animal){
 
         <div class="modal-gallery">
 
-
             ${animal.imagens.map(imagem=>`
 
                 <img 
@@ -613,9 +486,6 @@ function abrirModal(animal){
 
 
         </div>
-
-
-
 
 
         <div class="modal-info">
@@ -638,9 +508,6 @@ function abrirModal(animal){
 
             </div>
 
-
-
-
             <p class="age">
 
                 ${animal.idade} · ${animal.sexo}
@@ -648,15 +515,11 @@ function abrirModal(animal){
             </p>
 
 
-
-
             <p>
 
                 ${animal.historia}
 
             </p>
-
-
 
 
             <div class="characteristics">
@@ -673,9 +536,6 @@ function abrirModal(animal){
 
             </div>
 
-
-
-
             ${
                 !isAdotado
 
@@ -690,13 +550,9 @@ function abrirModal(animal){
                     Adotar ${animal.nome}
 
                 </a>
-
                 `
-
                 :
-
                 `
-
                 <p class="adopted-message">
 
                        ❤️ O ${animal.nome} já foi adotado pela família ${animal.adocao.familia}.
@@ -715,10 +571,6 @@ function abrirModal(animal){
 
 
     modal.classList.add("active");
-
-
-
-
 
     // ==========================================
     // GALERIA EXPANDIDA
@@ -763,13 +615,6 @@ function fecharModal(){
 
 }
 
-
-
-
-
-
-
-
 document.addEventListener("click",(e)=>{
 
 
@@ -784,12 +629,6 @@ document.addEventListener("click",(e)=>{
 
 
 });
-
-
-
-
-
-
 
 // ==========================================
 // START
@@ -885,8 +724,6 @@ function abrirGaleria(imagens,index){
 
     `;
 
-
-
       document.body.appendChild(galeria);
 
 
@@ -944,8 +781,6 @@ function abrirGaleria(imagens,index){
 }
 
 
-
-
 function atualizarImagemGaleria(galeria){
 
 
@@ -974,10 +809,6 @@ function atualizarImagemGaleria(galeria){
 
 
 }
-
-
-
-
 function imagemSeguinte(){
 
 
@@ -1060,9 +891,6 @@ function controlarTeclado(e){
 
 
 }
-
-
-
 
 function fecharGaleria(galeria){
 
