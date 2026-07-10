@@ -58,14 +58,14 @@ function carregarPagina(){
 
     if(pagina === "adocao.html"){
 
-        criarAnimaisAdocao();
+        AnimaisAdocao();
         iniciarFiltros();
 
     }
 
     if(pagina === "memorial.html"){
 
-        criarAnimaisAdotados();
+        AnimaisAdotados();
 
     }
 
@@ -73,10 +73,9 @@ function carregarPagina(){
 
     criarAnimaisDestaque();
 
-    criarHeroGallery();
+    carregarHeroGallery();
 
 }
-
 }
 
 
@@ -102,6 +101,86 @@ function criarAnimaisDestaque(){
     });
 
 }
+
+function carregarHeroGallery(){
+
+
+    const gallery = document.querySelector(".hero-gallery");
+
+
+    if(!gallery) return;
+
+
+
+    gallery.innerHTML = "";
+
+
+
+    let animaisHero = [];
+
+
+
+    // Primeiro carregar animais disponíveis
+
+    const disponiveis = animais.filter(animal =>
+        animal.estado === "disponivel"
+    );
+
+
+
+    animaisHero = [...disponiveis];
+
+
+
+    // Se não houver 4, completar com adotados
+
+    if(animaisHero.length < 4){
+
+
+        const adotados = animais.filter(animal =>
+            animal.estado === "adotado"
+        );
+
+
+        const restantes = 4 - animaisHero.length;
+
+
+
+        animaisHero.push(
+            ...adotados.slice(0, restantes)
+        );
+
+
+    }
+
+
+
+    // Garantir máximo de 4 imagens
+
+    animaisHero = animaisHero.slice(0,4);
+
+
+
+    animaisHero.forEach(animal=>{
+
+
+        const imagem = document.createElement("img");
+
+
+        imagem.src = animal.imagens[0];
+
+        imagem.alt = animal.nome;
+
+
+
+        gallery.appendChild(imagem);
+
+
+    });
+
+
+}
+
 
 function criarHeroGallery(){
 
