@@ -27,14 +27,14 @@ async function carregarAnimais(){
 
 
 
-        carregarPagina();
+        Pagina();
 
 
 
     }catch(error){
 
 
-        console.error("Erro ao carregar animais:", error);
+        console.error("Erro ao  animais:", error);
 
 
     }
@@ -58,24 +58,24 @@ function carregarPagina(){
 
     if(pagina === "adocao.html"){
 
-        AnimaisAdocao();
+        criarAnimaisAdocao();
         iniciarFiltros();
 
     }
 
     if(pagina === "memorial.html"){
 
-        AnimaisAdotados();
+        criarAnimaisAdotados();
 
     }
 
     if(pagina === "index.html" || pagina === ""){
 
-    criarAnimaisDestaque();
+        criarAnimaisDestaque();
+        carregarHeroGallery();
 
-    carregarHeroGallery();
+    }
 
-}
 }
 
 
