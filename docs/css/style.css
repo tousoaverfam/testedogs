@@ -1494,3 +1494,36 @@ footer{
     }
 
 }
+
+/* ==========================================
+   ALINHAMENTO DOS BOTÕES DOS CARDS
+========================================== */
+
+.animal-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+
+.card-button{
+
+    margin-top:auto;
+
+}
+
+.featured-slider .animal-card{
+
+    height:100%;
+
+}
+
+.featured-slider{
+
+    align-items:stretch;
+
+}
