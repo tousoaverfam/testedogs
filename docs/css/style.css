@@ -1658,3 +1658,14 @@ footer{
     }
 
 }
+
+html,
+body{
+    overflow-x:hidden;
+}
+
+.featured-slider{
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+}
