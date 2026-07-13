@@ -99,13 +99,57 @@ function renderHeader() {
 
                 </a>
 
+<button class="menu-toggle" id="menuToggle">
 
+    ☰
+
+</button>
 
             </nav>
 
 
         </div>
+<div class="mobile-menu" id="mobileMenu">
 
+    <a
+    href="index.html"
+    class="${currentPage === "index.html" ? "active" : ""}">
+
+        Home
+
+    </a>
+
+    <a
+    href="adocao.html"
+    class="${currentPage === "adocao.html" ? "active" : ""}">
+
+        Para Adoção
+
+    </a>
+
+    <a
+    href="memorial.html"
+    class="${currentPage === "memorial.html" ? "active" : ""}">
+
+        Adotados
+
+    </a>
+
+    <a
+    href="contactos.html"
+    class="${currentPage === "contactos.html" ? "active" : ""}">
+
+        Contactos
+
+    </a>
+
+    <a href="contactos.html" class="nav-button">
+
+        Fazer uma doação
+
+    </a>
+
+</div>
 
     </header>
 
