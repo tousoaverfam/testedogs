@@ -252,13 +252,9 @@ function renderFooter(){
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-
     renderHeader();
 
-
     renderFooter();
-
-
 
     if(typeof lucide !== "undefined"){
 
@@ -266,5 +262,27 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     }
 
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if(menuToggle && mobileMenu){
+
+        menuToggle.addEventListener("click",()=>{
+
+            mobileMenu.classList.toggle("active");
+
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(link=>{
+
+            link.addEventListener("click",()=>{
+
+                mobileMenu.classList.remove("active");
+
+            });
+
+        });
+
+    }
 
 });
